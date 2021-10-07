@@ -21,7 +21,7 @@
   --accent-color: 250, 87, 87;
   --font-color: 145, 148, 161;
   --white-color: 255, 255, 255;
-  --x: #252b46;
+  --x: #fa5757;
   
   --font-size: 18px;
 }
@@ -422,8 +422,13 @@ section > p, footer > p {
 }
 
 /* This max-height is hard coded. It works. But if paragraphs were different sizes by a large margin we should than find the exect height via JavaScript and inject it as max-height with JavaScript */
-.opened {
+.question-opened p {
   max-height: 200px;
+}
+
+.question-opened img {
+  transform: rotate(180deg);
+  filter: invert(46%) sepia(91%) saturate(2746%) hue-rotate(331deg) brightness(104%) contrast(96%);
 }
 
 .questions .btn {

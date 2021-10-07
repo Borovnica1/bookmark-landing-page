@@ -1,8 +1,13 @@
 const menuHamburgerIcon = document.querySelector('.hamburger-icon');
 const menuCloseIcon = document.querySelector('.menu-overlay__close');
 const menuOverlay = document.querySelector('.menu-overlay');
+
 const featureTabs = document.querySelectorAll('.features__list li');
 const features = document.querySelectorAll('.features__feature');
+
+const questionBlocks = document.querySelectorAll('.questions__questions > div');
+
+console.log('QQQ', questionBlocks);
 
 menuHamburgerIcon.addEventListener('click', () => {
   menuOverlay.classList.add('menu-overlay--active');
@@ -25,4 +30,10 @@ for (let featureTab of featureTabs) {
     featureTabs[featureIndex].classList.add('features__list--active');
     features[featureIndex].classList.add('feature--active');
   });
-}
+};
+
+for (let questionBlock of questionBlocks) {
+  questionBlock.addEventListener('click', function displayAnswer() {
+    questionBlock.classList.toggle('question-opened')
+  });
+};
