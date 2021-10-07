@@ -9,6 +9,7 @@ const questionBlocks = document.querySelectorAll('.questions__questions > div');
 
 const subscribeInput = document.querySelector('.subscribe input');
 const subscribeSubmitBtn = document.querySelector('.subscribe a');
+const subscribeDiv = document.querySelector('.subscribe');
 const subscribeInputError = document.querySelector('.subscribe__input-error');
 
 menuHamburgerIcon.addEventListener('click', () => {
@@ -49,10 +50,10 @@ subscribeSubmitBtn.addEventListener('click', function submitEmail() {
   const email = subscribeInput.value;
 
   if (email.length === 0 || !validateEmail(email)) {
-    subscribeInputError.classList.add('subscribe__input-error--active');
+    subscribeDiv.classList.add('subscribe-error--active');
   };
 });
 
 subscribeInput.addEventListener('keydown', () => {
-  subscribeInputError.classList.remove('subscribe__input-error--active');
+  subscribeDiv.classList.remove('subscribe-error--active');
 });

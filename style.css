@@ -488,7 +488,28 @@ footer, footer * {
   border-radius: 5px;
 }
 
-.subscribe__input-error--active {
+.subscribe div {
+  position: relative;
+  display: inline-block;
+}
+
+.subscribe div img {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  z-index: 10;
+}
+
+.subscribe-error--active .subscribe__input-error {
+  display: block;
+}
+
+.subscribe-error--active div input {
+  border: 2px solid rgb(var(--accent-color));
+}
+
+.subscribe-error--active div img {
   display: block;
 }
 
