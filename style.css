@@ -21,7 +21,7 @@
   --accent-color: 250, 87, 87;
   --font-color: 145, 148, 161;
   --white-color: 255, 255, 255;
-  --x: #fa5757;
+  --x: #252b46;
   
   --font-size: 18px;
 }
@@ -29,9 +29,6 @@
 body {
   position: relative;
   color: rgb(var(--font-color));
-/*   display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
 p {
@@ -74,6 +71,73 @@ h4, h4 * {
 }
 
 
+.menu-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(var(--primary-color-dark), .9);
+  z-index: 100;
+  display: none;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 40px 30px;
+}
+
+.menu-overlay--active {
+  display: flex;
+}
+
+.menu-overlay__brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-overlay__list {
+  margin-top: 20px;
+}
+
+.menu-overlay__list li {
+  text-align: center;
+  border-top: 1px solid rgba(var(--white-color), .1);
+
+}
+
+.menu-overlay__list li a {
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: rgb(var(--white-color));
+}
+
+.menu-overlay__list li:last-child a {
+  background-color: rgba(var(--primary-color-dark), 0);
+  border: 2px solid rgba(var(--white-color), 1);
+}
+
+.menu-overlay__icons {
+  text-align: center;
+}
+
+.menu-overlay__icons > *{
+  margin: 0 15px 0 15px;
+}
+
+.menu-overlay__close {
+  cursor: pointer;
+  width: 40px;
+  padding: 10px;
+}
+
+.menu-overlay__icons img:hover,
+.menu-overlay__close:hover {
+  filter: invert(51%) sepia(92%) saturate(2157%) hue-rotate(324deg) brightness(95%) contrast(109%);
+}
 
 .active {
   display: block !important;
@@ -628,7 +692,7 @@ footer, footer * {
 
 /* MOBILE */
 @media (max-width: 575px) and (min-height: 500px) {
-  menu {
+  header menu {
     display: none;
   }
 
@@ -656,6 +720,14 @@ footer, footer * {
     top: 17%;
     left: 22%;
   } 
+
+  .intro__text .btn-primary {
+    margin: 0 5px 0 5px;
+  }
+
+  .intro__text .btn-secondary {
+    margin: 0 5px 0 5px;
+  }
 
   .features__list {
     width: 100%;
