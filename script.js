@@ -7,7 +7,9 @@ const features = document.querySelectorAll('.features__feature');
 
 const questionBlocks = document.querySelectorAll('.questions__questions > div');
 
-console.log('QQQ', questionBlocks);
+const subscribeInput = document.querySelector('.subscribe input');
+const subscribeSubmitBtn = document.querySelector('.subscribe a');
+const subscribeInputError = document.querySelector('.subscribe__input-error');
 
 menuHamburgerIcon.addEventListener('click', () => {
   menuOverlay.classList.add('menu-overlay--active');
@@ -37,3 +39,20 @@ for (let questionBlock of questionBlocks) {
     questionBlock.classList.toggle('question-opened')
   });
 };
+
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+subscribeSubmitBtn.addEventListener('click', function submitEmail() {
+  const email = subscribeInput.value;
+
+  if (email.length === 0 || !validateEmail(email)) {
+    subscribeInputError.classList.add('subscribe__input-error--active');
+  };
+});
+
+subscribeInput.addEventListener('keydown', () => {
+  subscribeInputError.classList.remove('subscribe__input-error--active');
+});
